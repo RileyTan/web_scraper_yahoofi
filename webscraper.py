@@ -30,5 +30,5 @@ json_data = json.loads(script_data[start:-12])
 # there are keys within the key 'context'
 print(json_data['context'].keys()) # dict_keys(['dispatcher', 'options', 'plugins'])
 
-annual_is = json_data['context']['dispatcher']['stores']['QuoteSummaryStore']['incomeStatementHistory']['incomeStatementHistory']
+annual_is = json_data['context']['dispatcher']['stores']
 print(annual_is[0])
