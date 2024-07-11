@@ -20,5 +20,10 @@ soup = BeautifulSoup(response.text, 'lxml')
 pattern = re.compile(r'\s--\sData\s--\s')
 script_data = soup.find('script', text=pattern).contents[0]
 
-print(script_data[:500])
-print(script_data[-500:])
+#print(script_data[:500])
+#print(script_data[-500:])
+
+# searching deeper
+start = script_data.find("context")-2
+json_data = json.loads(script_data[start:-12])
+json_date['context'].keys
