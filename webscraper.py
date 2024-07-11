@@ -12,7 +12,8 @@ url_financials = 'https://sg.finance.yahoo.com/quote/{}/financials/'
 
 stock = 'DIS'
 
-response = requests.get(url_financials.format(stock) , headers={'user-agent':'my-app'})
+headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36' }
+response = requests.get(url_financials.format(stock) , headers=headers)
 soup = BeautifulSoup(response.text, 'lxml')
 
 # there are many scripts, use re to solve. also, compile() lets us reuse a pattern
