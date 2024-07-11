@@ -26,4 +26,4 @@ script_data = soup.find('script', text=pattern).contents[0]
 # searching deeper
 start = script_data.find("context")-2
 json_data = json.loads(script_data[start:-12])
-json_date['context'].keys
+json_data['context'].keys
