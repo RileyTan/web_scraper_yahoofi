@@ -16,5 +16,7 @@ response = requests.get(url_financials.format(stock))
 soup = BeautifulSoup(response.text, 'lxml')
 
 # there are many scripts, use re to solve. also, compile() lets us reuse a pattern
-pattern = re.compile(r'
+pattern = re.compile(r'\s--\sData\s--\s')
+script_data = soup.find('script', text=pattern).contents[0]
 
+print(script_data[:500])
