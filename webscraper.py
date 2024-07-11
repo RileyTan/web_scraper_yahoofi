@@ -15,3 +15,6 @@ stock = 'DIS'
 response = requests.get(url_financials.format(stock))
 soup = BeautifulSoup(response.text, 'lxml')
 
+# there are many scripts
+pattern = re.compile()
+
