@@ -10,3 +10,5 @@ url_profile = 'https://sg.finance.yahoo.com/quote/{}/profile/'
 url_financials = 'https://sg.finance.yahoo.com/quote/{}/financials/'
 
 stock = 'DIS'
+
+response = requests.get(url_financials
