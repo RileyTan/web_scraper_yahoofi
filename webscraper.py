@@ -15,6 +15,6 @@ stock = 'DIS'
 response = requests.get(url_financials.format(stock))
 soup = BeautifulSoup(response.text, 'lxml')
 
-# there are many scripts
+# there are many scripts, use re to solve. also, compile() lets us reuse a pattern
 pattern = re.compile()
 
