@@ -20,5 +20,5 @@ soup = BeautifulSoup(response.text, 'lxml')
 pattern = re.compile(r'\s--\sData\s--\s')
 script_data = soup.find('script', text=pattern).contents[0]
 
-print(script_data)
+print(script_data[:500])
 
