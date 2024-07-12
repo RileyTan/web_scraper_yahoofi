@@ -18,4 +18,5 @@ table = valuation_measures.xpath('.//table[@class="W(100%) Bdcl(c) "]')[0]
 # get measure_names within the table
 measure_names = table.xpath('.//span/text()')
 
-
+measure_values = table.xpath('.//td[@class="Fw(500) Ta(end) Pstart(10px) Miw(60px)"]/text()')
+print(measure_values)
