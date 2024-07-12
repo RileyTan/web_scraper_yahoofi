@@ -23,9 +23,9 @@ measure_values = table.xpath('.//td[@class="Fw(500) Ta(end) Pstart(10px) Miw(60p
 output = []
 for info in zip(measure_names, measure_values):
     resp = {}
-    # resp['valuation_measure'] = info[0]
+    # resp['valuation_measure'] = info[0] - giving them new names
     # resp['stats'] = info[1]
-    resp[info[0]] = resp[info[1]]
+    resp[info[0]] = info[1] # using measure_name as the key and measure_value as the value
     output.append(resp)
 
 print(output)
