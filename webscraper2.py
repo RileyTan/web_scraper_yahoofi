@@ -8,10 +8,14 @@ doc = lxml.html.fromstring(html.text)
 
 # if making a web-based API, JSON as output is better choice, easily consumed by more prog languages
 # if planning to do data analysis/manipulation, CSV might be more suitable, can import into Excel
+
+# get whole div
 valuation_measures = doc.xpath('//div[@id="Col1-0-KeyStatistics-Proxy"]')[0]
 
+# get whole table within the div
 table = valuation_measures.xpath('.//table[@class="W(100%) Bdcl(c) "]')[0]
 
-<tr class="Bxz(bb) H(36px) BdY Bdc($seperatorColor) fi-row Bgc($hoverBgColor):h"><td class="Pos(st) Start(0) Bgc($lv2BgColor) fi-row:h_Bgc($hoverBgColor) Pend(10px)  Miw(140px)"><span>Market cap (intra-day)</span> <sup aria-label=""></sup></td><td class="Fw(500) Ta(end) Pstart(10px) Miw(60px)">176.11B</td></tr>
-<td class="Pos(st) Start(0) Bgc($lv2BgColor) fi-row:h_Bgc($hoverBgColor) Pend(10px)  Miw(140px)"><span>Market cap (intra-day)</span> <sup aria-label=""></sup></td>
-<span>Market cap (intra-day)</span>
+# get measure_names within the table
+measure_names = table.xpath('.//span/text()')
+
+
