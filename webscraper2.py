@@ -19,4 +19,13 @@ table = valuation_measures.xpath('.//table[@class="W(100%) Bdcl(c) "]')[0]
 measure_names = table.xpath('.//span/text()')
 
 measure_values = table.xpath('.//td[@class="Fw(500) Ta(end) Pstart(10px) Miw(60px)"]/text()')
-print(measure_values)
+
+output = []
+for info in zip(measure_names, measure_values):
+    resp = {}
+    # resp['valuation_measure'] = info[0]
+    # resp['stats'] = info[1]
+    resp[info[0]] = resp[info[1]]
+    output.append(resp)
+
+print(output)
