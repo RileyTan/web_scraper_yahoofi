@@ -2,4 +2,5 @@ import requests
 import lxml.html
 
 html = requests.get("https://sg.finance.yahoo.com/quote/DIS/key-statistics/")
-doc = lxml.html.fromstring()
+# fromstring() expects a string. html.content is the string
+doc = lxml.html.fromstring(html.content)
