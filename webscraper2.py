@@ -20,6 +20,7 @@ measure_names = table.xpath('.//span/text()')
 
 measure_values = table.xpath('.//td[@class="Fw(500) Ta(end) Pstart(10px) Miw(60px)"]/text()')
 
+# not yet JSON, its just a list of dictionaries
 output = []
 for info in zip(measure_names, measure_values):
     resp = {}
