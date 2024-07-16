@@ -1,5 +1,6 @@
 import requests
 import lxml.html
+import json
 
 headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36' }
 html = requests.get("https://sg.finance.yahoo.com/quote/DIS/key-statistics/", headers=headers)
@@ -29,4 +30,8 @@ for info in zip(measure_names, measure_values):
     resp[info[0]] = info[1] # using measure_name as the key and measure_value as the value
     output.append(resp)
 
-print(output)
+# json_output = json.dumps(output)
+# output and json_output looks the same
+
+with open('output.json', 'w') as f:
+    json.dump(output, f)
